@@ -84,12 +84,18 @@ CiSEOnCircleNodePair.prototype.hashCode = function(){
     return this.firstNode.hashCode() + this.secondNode.hashCode();
 };
 
-CiSEOnCircleNodePair.prototype.toString = function () {
-    let result = "Swap: " + this.getFirstNode().label;
-    result += "<->"+ this.getSecondNode().label;
-    result +=", "+ this.getDiscrepancy();
+CiSEOnCircleNodePair.prototype.toString = function () 
+    const firstNode = this.getFirstNode();
 
-    return result;
+    if (!!firstNode) {
+        let result = "Swap: " + firstNode.label;
+        result += "<->"+ this.getSecondNode().label;
+        result +=", "+ this.getDiscrepancy();
+
+        return result;
+    }
+
+    return '';
 };
 
 module.exports = CiSEOnCircleNodePair;
