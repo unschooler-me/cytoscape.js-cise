@@ -3152,11 +3152,17 @@ CiSEOnCircleNodePair.prototype.hashCode = function () {
 };
 
 CiSEOnCircleNodePair.prototype.toString = function () {
-    var result = "Swap: " + this.getFirstNode().label;
-    result += "<->" + this.getSecondNode().label;
-    result += ", " + this.getDiscrepancy();
+    var firstNode = this.getFirstNode();
 
-    return result;
+    if (!!firstNode) {
+        var result = "Swap: " + firstNode.label;
+        result += "<->" + this.getSecondNode().label;
+        result += ", " + this.getDiscrepancy();
+
+        return result;
+    }
+
+    return '';
 };
 
 module.exports = CiSEOnCircleNodePair;

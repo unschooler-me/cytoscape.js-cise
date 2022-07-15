@@ -84,7 +84,7 @@ CiSEOnCircleNodePair.prototype.hashCode = function(){
     return this.firstNode.hashCode() + this.secondNode.hashCode();
 };
 
-CiSEOnCircleNodePair.prototype.toString = function () 
+CiSEOnCircleNodePair.prototype.toString = function () {
     const firstNode = this.getFirstNode();
 
     if (!!firstNode) {
